@@ -95,7 +95,7 @@ export function Footer() {
             </div>
             <div>
               <h4 className="text-xl font-bold mb-1">Trusted & Verified</h4>
-              <p className="text-white/50">100% of all donations go directly to community programs.</p>
+              <p className="text-white/50">94% of all donations go directly to community programs.</p>
             </div>
           </div>
           <div className="flex flex-wrap justify-center gap-4">
