@@ -32,46 +32,46 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #020817;
+  --background: #fdfcfb; /* Very light off-white/warm cream */
+  --foreground: #050a08; /* Near black green */
   --card: #ffffff;
-  --card-foreground: #020817;
+  --card-foreground: #050a08;
   --popover: #ffffff;
-  --popover-foreground: #020817;
-  --primary: #006400; /* Deep Green */
-  --primary-foreground: #ffffff;
-  --secondary: #000033; /* Dark Navy */
-  --secondary-foreground: #ffffff;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #f1f5f9;
-  --accent-foreground: #0f172a;
-  --destructive: #ef4444;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #006400;
+  --popover-foreground: #050a08;
+  --primary: #0a3d2a; /* Deep Forest Green */
+  --primary-foreground: #f4f1ee;
+  --secondary: #d4c4a8; /* Warm Sand/Beige */
+  --secondary-foreground: #1a1a1a;
+  --muted: #f4f1ee;
+  --muted-foreground: #4a4a4a;
+  --accent: #d4c4a8;
+  --accent-foreground: #0a3d2a;
+  --destructive: #7f1d1d;
+  --border: #e5e1dc;
+  --input: #e5e1dc;
+  --ring: #0a3d2a;
   --radius: 0.5rem;
 }
 
 .dark {
-  --background: #020817;
-  --foreground: #f8fafc;
-  --card: #020817;
-  --card-foreground: #f8fafc;
-  --popover: #020817;
-  --popover-foreground: #f8fafc;
-  --primary: #008000; /* Slightly lighter green for dark mode */
-  --primary-foreground: #ffffff;
-  --secondary: #000066;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  --destructive: #7f1d1d;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #008000;
+  --background: #050a08;
+  --foreground: #f4f1ee;
+  --card: #0a1410;
+  --card-foreground: #f4f1ee;
+  --popover: #0a1410;
+  --popover-foreground: #f4f1ee;
+  --primary: #d4c4a8; /* Swap primary/secondary in dark mode for elegance or use lighter green */
+  --primary-foreground: #0a3d2a;
+  --secondary: #0a3d2a;
+  --secondary-foreground: #f4f1ee;
+  --muted: #0f1c18;
+  --muted-foreground: #a1a1aa;
+  --accent: #d4c4a8;
+  --accent-foreground: #0a3d2a;
+  --destructive: #ef4444;
+  --border: #0f1c18;
+  --input: #0f1c18;
+  --ring: #d4c4a8;
 }
 
 @layer base {
@@ -79,6 +79,9 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
   }
 }

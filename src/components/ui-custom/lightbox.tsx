@@ -1,12 +1,13 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface LightboxProps {
-  images: { title: string; category: string; color: string }[]
+  images: { title: string; category: string; image: string }[]
   currentIndex: number | null
   onClose: () => void
   onNext: () => void
@@ -64,13 +65,19 @@ export function Lightbox({ images, currentIndex, onClose, onNext, onPrev }: Ligh
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-          className="max-w-4xl w-full aspect-video rounded-xl overflow-hidden shadow-2xl relative"
+          className="max-w-5xl w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative bg-black/50"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className={`w-full h-full ${image.color} flex items-center justify-center`}>
-            <span className="text-black/30 text-2xl font-bold">Image: {image.title}</span>
+          <div className="relative w-full h-full">
+            <Image
+              src={image.image}
+              alt={image.title}
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
-          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 bg-gradient-to-t from-black/90 via-black/40 to-transparent text-white">
             <p className="text-sm font-medium uppercase tracking-wider text-primary-foreground/80">{image.category}</p>
             <h3 className="text-2xl font-bold">{image.title}</h3>
           </div>
